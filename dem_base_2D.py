@@ -29,7 +29,6 @@ def create_grains():
         L_x_L = dict_save['L_x_L']
         L_y_L = dict_save['L_y_L']
         L_rbm = dict_save['L_rbm']
-        extrude_z = dict_save['extrude_z']
 
         # create grain
         for i_grain in range(len(L_sdf_i_map)):
@@ -107,11 +106,10 @@ density = 2000
 # main information
 with open('data/level_set_part0.data', 'rb') as handle:
     dict_save = pickle.load(handle)
-L_x = dict_save['L_x']
-L_y = dict_save['L_y']
-L_pos_w = dict_save['L_pos_w']
 m_size = dict_save['m_size']
+L_pos_w = dict_save['L_pos_w']
 n_data_base = dict_save['n_data_base']
+extrude_z = dict_save['extrude_z']
 
 # -----------------------------------------------------------------------------#
 # Plan simulation
