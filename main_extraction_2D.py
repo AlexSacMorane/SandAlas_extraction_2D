@@ -40,13 +40,13 @@ map_data = np.array(np.zeros((i_x_max-i_x_min+1,
 margins = 5
 
 # extrusion
-extrude_z = 100
+extrude_z = 50
 
 # mesh size
 m_size = 11 # µm
 
 # number of grains by data set
-n_grain_data = 20
+n_grain_data = 30
 i_data = 1 
 
 # surface minimum
@@ -273,8 +273,7 @@ for i_sdf in range(len(L_label)):
                 'L_sdf_i_map': L_sdf,
                 'L_x_L': L_x_L,
                 'L_y_L': L_y_L,
-                'L_rbm': L_rbm,
-                'extrude_z': extrude_z
+                'L_rbm': L_rbm
             }
             with open('data/level_set_part'+str(i_data)+'.data', 'wb') as handle:
                 pickle.dump(dict_save, handle, protocol=pickle.HIGHEST_PROTOCOL)
@@ -396,8 +395,7 @@ for i_sdf in range(len(L_label)):
                 'L_sdf_i_map': L_sdf,
                 'L_x_L': L_x_L,
                 'L_y_L': L_y_L,
-                'L_rbm': L_rbm,
-                'extrude_z': extrude_z
+                'L_rbm': L_rbm
             }
             with open('data/level_set_part'+str(i_data)+'.data', 'wb') as handle:
                 pickle.dump(dict_save, handle, protocol=pickle.HIGHEST_PROTOCOL)
@@ -430,7 +428,9 @@ plt.close(fig)
 dict_save = {
     'm_size': m_size,
     'L_pos_w': L_pos_w,
-    'n_data_base': i_data - 1
+    'n_data_base': i_data - 1,
+    'extrude_z': extrude_z,
+    'margins': margins
 }
 with open('data/level_set_part0.data', 'wb') as handle:
     pickle.dump(dict_save, handle, protocol=pickle.HIGHEST_PROTOCOL)
